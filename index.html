@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Authentication with firebase</title>
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBM7w4JdRlWeTTWDd2jE_R7HyEKoLeFENc",
+        authDomain: "supply-bazaar.firebaseapp.com",
+        databaseURL: "https://supply-bazaar.firebaseio.com",
+        projectId: "supply-bazaar",
+        storageBucket: "",
+        messagingSenderId: "135100786810"
+      };
+      firebase.initializeApp(config);
+
+    </script>
+    <style>
+        #app{
+        width:50%;
+        margin: 100px auto;
+        }
+        .hide{
+        display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <input type="email" id="txtEmail" placeholder="Enter email" /> <br/>
+        <input type="password" id="txtPassword" placeholder="Enter password" /><br/>
+        <button id="btnLogin" >Log in</button>
+        <button id="btnSignUp" >Sign Up</button>
+        <button id="btnLogOut" class="hide" >Log Out</button>
+
+    </div>  
+    <div id="results"></div>
+    <script type="text/javascript" src="script.js">
+              
+      document.getElementById("btnSignUp").addEventListener('click', e=>{
+      const email = document.getElementById("txtEmail").value;
+      const pass = document.getElementById("txtPassword").value;
+      firebase.auth().createUserWithEmailAndPassword(email, pass).catch(function(error) {
+       console.log(error.message);
+      });
+    })
+    
+    document.getElementById("btnLogin").addEventListener('click', e=>{
+  const email = document.getElementById("txtEmail").value;
+  const pass = document.getElementById("txtPassword").value;
+  const promise = firebase.auth().signInWithEmailAndPassword(email, pass);
+  promise.catch(e=>{ console.log(e.massage)})
+})
+
+firebase.auth().onAuthStateChanged(user=>{ 
+  if(user){
+    document.getElementById("btnLogOut").classList.remove('hide')
+  } else{
+    document.getElementById("btnLogOut").classList.add('hide')
+  }
+})
+
+document.getElementById("btnLogOut").addEventListener('click', e=>{
+  firebase.auth().signOut();
+  console.log('logged out')
+})
+    </script>
+</body>
+</html>
