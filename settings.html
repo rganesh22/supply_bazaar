@@ -50,7 +50,12 @@
           </nav>
 
 <script>
-var database = firebase.database();
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+                                                                                             
+                                                                                             
+   var database = firebase.database();
 
 
 var userId;                                                                                             
@@ -65,14 +70,21 @@ var grade = document.getElementById('usr_grade');
 var class_4 = document.getElementById('usr_class');
 
 function updateUserInfo() {
-  var userId = firebase.auth().currentUser.uid;
+  userId = firebase.auth().currentUser.uid;
   firebase.database().ref('users/' + userId).set({
     name: name.value
     //,
     //grade: grade.value,
     //class_4 : class_4.value
   });
-}                                                                                      
+}         
+                                                                                             
+  } else {
+    // No user is signed in.
+  }
+});
+                                                                                             
+                                                                              
 </script>                                                                                      
 
 <form style="padding:25px 25px 25px 25px;">
