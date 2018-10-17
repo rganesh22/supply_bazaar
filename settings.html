@@ -50,34 +50,29 @@
           </nav>
 
 <script>
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    // User is signed in.
+var userId;
                                                                                              
-                                                                                             
-   var database = firebase.database();
-
-
-var userId;                                                                                             
 if (firebase.auth().currentUser !== null) {
         console.log("user id: " + firebase.auth().currentUser.uid);
 }
         
-
-
 var name = document.getElementById('usr');
 var grade = document.getElementById('usr_grade');
 var class_4 = document.getElementById('usr_class');
 
 function updateUserInfo() {
-  userId = firebase.auth().currentUser.uid;
   firebase.database().ref('users/' + userId).set({
     name: name.value
     //,
     //grade: grade.value,
     //class_4 : class_4.value
   });
-}         
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    userId = firebase.auth().currentUser.uid;
+}                                                                                        
+
                                                                                              
   } else {
     // No user is signed in.
