@@ -55,9 +55,7 @@ var database = firebase.database();
 
 var userId;                                                                                             
 if (firebase.auth().currentUser !== null) {
-        console.log("user id: " + firebase.auth().currentUser.uid);
-        userId = firebase.auth().currentUser.uid;
-}
+        console.log("user id: " + firebase.auth().currentUser.uid;
         
 
 
@@ -66,8 +64,9 @@ var grade = document.getElementById('usr_grade');
 var class_4 = document.getElementById('usr_class');
 
 function updateUserInfo() {
+  var userId = firebase.auth().currentUser.uid;
   firebase.database().ref('users/' + userId).set({
-    username: name.value
+    name: name.value
     //,
     //grade: grade.value,
     //class_4 : class_4.value
