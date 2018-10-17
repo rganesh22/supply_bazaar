@@ -51,10 +51,6 @@
 
 <script>
 var userId;
-                                                                                             
-if (firebase.auth().currentUser !== null) {
-        console.log("user id: " + firebase.auth().currentUser.uid);
-}
         
 var name = document.getElementById('usr');
 var grade = document.getElementById('usr_grade');
@@ -67,6 +63,7 @@ function updateUserInfo() {
     //grade: grade.value,
     //class_4 : class_4.value
   });
+}
 
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
