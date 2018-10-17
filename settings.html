@@ -58,13 +58,13 @@ var userId = firebase.auth().currentUser.uid;
 
 var name = document.getElementById('usr');
 var grade = document.getElementById('usr_grade');
-var class = document.getElementById('usr_class');
+var class_4 = document.getElementById('usr_class');
 
 function updateUserInfo() {
   firebase.database().ref('users/' + userId).set({
     username: name.value,
     grade: grade.value,
-    class : class.value
+    class_4 : class_4.value
   });
 }                                                                                      
 </script>                                                                                      
