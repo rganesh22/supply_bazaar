@@ -51,10 +51,15 @@
 
 <script>
 var database = firebase.database();
-if (firebase.auth().currentUser !== null) 
-        console.log("user id: " + firebase.auth().currentUser.uid);
 
-var userId = firebase.auth().currentUser.uid;
+
+var userId;                                                                                             
+if (firebase.auth().currentUser !== null) {
+        console.log("user id: " + firebase.auth().currentUser.uid);
+        userId = firebase.auth().currentUser.uid;
+}
+        
+
 
 var name = document.getElementById('usr');
 var grade = document.getElementById('usr_grade');
