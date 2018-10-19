@@ -54,10 +54,7 @@ var userId;
                                                                                              
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
-    userId = firebase.auth().currentUser.uid;
-}                                                                                        
-
-                                                                                             
+    userId = firebase.auth().currentUser.uid;                                                                                                                                                                                   
   } else {
     // No user is signed in.
   }
