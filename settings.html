@@ -51,6 +51,17 @@
 
 <script>
 var userId;
+                                                                                             
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    userId = firebase.auth().currentUser.uid;
+}                                                                                        
+
+                                                                                             
+  } else {
+    // No user is signed in.
+  }
+});                                                                                            
         
 var name = document.getElementById('usr');
 var grade = document.getElementById('usr_grade');
@@ -64,17 +75,6 @@ function updateUserInfo() {
     //class_4 : class_4.value
   });
 }
-
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    userId = firebase.auth().currentUser.uid;
-}                                                                                        
-
-                                                                                             
-  } else {
-    // No user is signed in.
-  }
-});
                                                                                              
                                                                               
 </script>                                                                                      
