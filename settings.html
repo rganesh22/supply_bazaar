@@ -65,8 +65,10 @@ var grade = document.getElementById('usr_grade');
 var class_4 = document.getElementById('usr_class');
 
 function updateUserInfo() {
+  var i_name = name.value;
+  console.log(i_name);
   firebase.database().ref('users/' + userId).set({
-    name: name.value
+    name: i_name
     //,
     //grade: grade.value,
     //class_4 : class_4.value
