@@ -84,7 +84,7 @@ function updateUserInfo() {
   console.log(name);
   console.log(name.value);
   firebase.database().ref('users/' + userId).set({
-    name: name.value;
+    name: name.value
     //,
     //grade: grade.value,
     //class_4 : class_4.value
