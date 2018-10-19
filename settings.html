@@ -76,15 +76,15 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });                                                                                            
         
-var name = document.getElementById("usr");
-var grade = document.getElementById("usr_grade");
-var class_4 = document.getElementById("usr_class");
-
 function updateUserInfo() {
-  var i_name = name.value;
+  var name = document.getElementById("usr");
+  var grade = document.getElementById("usr_grade");
+  var class_4 = document.getElementById("usr_class");
+
   console.log(name);
+  console.log(name.value);
   firebase.database().ref('users/' + userId).set({
-    name: i_name
+    name: name.value;
     //,
     //grade: grade.value,
     //class_4 : class_4.value
