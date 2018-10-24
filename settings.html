@@ -71,7 +71,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                                                    
     return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
       var snapshot = snapshot.val();
-      console.log(snapshot);
+      console.log(snapshot.name);
+                                                   
       name.value = snapshot.name;
       grade.value = snapshot.grade;
       class_4.value = snapshot.class_4;
