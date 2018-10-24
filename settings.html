@@ -69,7 +69,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     userId = firebase.auth().currentUser.uid;
     console.log(userId);
                                                    
-    return firebase.database().ref('/users/' + userIdb).once('value').then(function(snapshot) {
+    return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
       var snapshot = snapshot.val();
       console.log(snapshot);
       // ...
