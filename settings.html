@@ -63,6 +63,16 @@ var userId;
   var name = document.getElementById("usr");
   var grade = document.getElementById("usr_grade");
   var class_4 = document.getElementById("usr_class");
+   
+function updateUserInfo() {
+  console.log(name);
+  console.log(name.value);
+  firebase.database().ref('users/' + userId).set({
+    name: name.value,
+    grade: grade.value,
+    class_4 : class_4.value
+  });
+}      
                                                    
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -71,7 +81,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                                                    
     return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
       var snapshot = snapshot.val();
-      console.log(snapshot.name);
+      console.log(snapshot.);
       console.log(name);
                                                    
       name.value = snapshot.name;
@@ -84,16 +94,7 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });                                                                                            
         
-function updateUserInfo() {
-  console.log(name);
-  console.log(name.value);
-  firebase.database().ref('users/' + userId).set({
-    name: name.value,
-    grade: grade.value,
-    class_4 : class_4.value
-  });
-}
-                                                                                             
+                                                                                      
                                                                               
 </script>                                                                                      
 
