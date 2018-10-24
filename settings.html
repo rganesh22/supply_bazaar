@@ -73,8 +73,8 @@ firebase.auth().onAuthStateChanged(function(user) {
       var snapshot = snapshot.val();
       console.log(snapshot);
       name.value = snapshot.name;
-      grade.value = grade.name;
-      class_4.value = class_4.name;
+      grade.value = snapshot.grade;
+      class_4.value = snapshot.class_4;
       // ...
     });
   } else {
