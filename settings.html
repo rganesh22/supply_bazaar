@@ -85,10 +85,6 @@ firebase.auth().onAuthStateChanged(function(user) {
 });                                                                                            
         
 function updateUserInfo() {
-  name = document.getElementById("usr");
-  grade = document.getElementById("usr_grade");
-  class_4 = document.getElementById("usr_class");
-
   console.log(name);
   console.log(name.value);
   firebase.database().ref('users/' + userId).set({
