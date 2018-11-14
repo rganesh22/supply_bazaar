@@ -1,43 +1,27 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>The Supply Bazaar</title>
+    <title>Supply Bazaar</title>
 
   <!-- Latest compiled and minified CSS -->
- 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>  
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
-<style>
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-    width: 40%;
-}
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-.container {
-    padding: 2px 16px;
-}
-</style>
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
     <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBM7w4JdRlWeTTWDd2jE_R7HyEKoLeFENc",
-    authDomain: "supply-bazaar.firebaseapp.com",
-    databaseURL: "https://supply-bazaar.firebaseio.com",
-    projectId: "supply-bazaar",
-    storageBucket: "supply-bazaar.appspot.com",
-    messagingSenderId: "135100786810"
-  };
-  firebase.initializeApp(config);
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCMvELX-gEsN747OJyZELTcxqJ2A685QUk",
+        authDomain: "studyshare-e8cc3.firebaseapp.com",
+        databaseURL: "https://studyshare-e8cc3.firebaseio.com",
+        projectId: "studyshare-e8cc3",
+        storageBucket: "studyshare-e8cc3.appspot.com",
+        messagingSenderId: "637583739111"
+      };
+      firebase.initializeApp(config);
       
     </script>
   </head>
@@ -45,7 +29,7 @@
     <!-- The surrounding HTML is left untouched by FirebaseUI.
          Your app may use that space for branding, controls and other customizations.-->
          <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-            <a class="navbar-brand" href="#">The Supply Bazaar</a>
+            <a class="navbar-brand" href="#">Supply Bazaar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -55,20 +39,19 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="settings.html">Settings</a>
+                    <a class="nav-link" href="#">Buy</a>
                   </li>
-                  
-              </nav>
-              
-<div style="padding:25px 25px 25px 25px;">
-<div class="card">
-  <img src="img_avatar.png" alt="Avatar" style="width:100%">
-  <div class="container">
-    <h4><b>John Doe</b></h4> 
-    <p>Architect & Engineer</p> 
-  </div>
-</div>
-</div>
-            
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Sell</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Settings</a>
+                  </li>
+          </nav>
   </body>
+  <script>
+  $('#exampleModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
+  </script>
 </html>
