@@ -88,11 +88,12 @@
       <label for="prod_image">Upload Image</label>
       <input type="file" class="form-control-file" id="prod_image">
      </div>
+       
         
 </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Publish</button>
+        <button type="button" class="btn btn-success" onClick="updateProductListing()">Publish</button>
       </div>
     </div>
   </div>
@@ -103,6 +104,39 @@ $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').trigger('focus')
 })
 </script>
+<script>
+  function guid() {
+  function s4() {
+    return Math.floor((1 + Math.random()) * 0x10000)
+      .toString(16)
+      .substring(1);
+  }
+  return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+}
+  
+  var userId;
+  var prod_name = document.getElementById("prod_name");
+  var prod_desc = document.getElementById("prod_desc");
+  var prod_price = document.getElementById("prod_price");
+  var prod_image = document.getElementById("prod_image");
+   
+function updateProductListing() {
+  prod_name = document.getElementById("prod_name");
+  prod_desc = document.getElementById("prod_desc");
+  prod_price = document.getElementById("prod_price");
+  prod_image = document.getElementById("prod_image");
+  
+  var prod_id = guid();
+  firebase.database().ref('products/' + prod_id).set({
+    name: prod_name.value,
+    desc: prod_desc.value,
+    price: prod_price.value,
+    image: prod_image.value
+  });
+}                                                                                             
+                                                                                                                                                                    
+</script>  
+
 </body>
    
 </html>
