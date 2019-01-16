@@ -112,6 +112,23 @@ $('#myModal').on('shown.bs.modal', function () {
 })
 </script>
 <script>
+  firebase.auth().onAuthStateChanged(function(user) {
+    user_name = document.getElementById("usr_name");
+
+    if (user) {
+      userId = firebase.auth().currentUser.uid;
+      console.log(userId);
+
+      return firebase.database().ref('/products/').once('value').then(function(snapshot) {
+        var snapshot = snapshot.val();
+        console.log(snapshot);
+      });
+    } else {
+      // No user is signed in.
+    }
+  });  
+  
+  
   function guid() {
   function s4() {
     return Math.floor((1 + Math.random()) * 0x10000)
