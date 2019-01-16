@@ -59,7 +59,14 @@
                   </li>
           </nav>
    <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#exampleModal">Sell</button>
-                
+   
+ <div class="card">
+  <alt="Avatar" style="width:20%">
+  <div class="container">
+    <h4><b>John Doe</b></h4> 
+    <p>Architect & Engineer</p> 
+  </div>
+</div>
                 
                 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -134,6 +141,8 @@ function updateProductListing() {
     price: prod_price.value,
     image: prod_image.value
   });
+  
+  $('#myModal').modal('hide');
 }                                                                                             
                                                                                                                                                                     
 </script>  
